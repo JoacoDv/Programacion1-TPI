@@ -1,5 +1,6 @@
 from lectura_csv import extraer_datos
 from buscar_pais import buscar_pais
+from filtrar_pais import filtrar_pais
 
 # 1ro Hay que pedir al usuario el nombre del archivo con el cual vamos a trabajar
 
@@ -23,12 +24,12 @@ print("""Seleccion la opcion que desee.
          2 Filtrar paises
          3 Ordenar paises
          4 Mostrar estadisticas
-         5 Salir del programa
-""")
+         5 Salir del programa""")
 
-respuesta = int(input())
+respuesta = int(input("Eliga una opción: "))
     
 if respuesta == 1:
     buscar_pais(datos)
-    
 
+elif respuesta == 2:
+    filtrar_pais(datos)

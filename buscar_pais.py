@@ -30,7 +30,7 @@ def buscar_pais(paises):
     #Al haber coincidencia mostramos los paises por pantalla con un bucle
     else:
         for pais in paises_similares:
-            print(f""" Pais: {pais["nombre"]}
+            print(f"""Pais: {pais["nombre"]}
 Habitantes: {pais["poblacion"]}
 Superficie: {pais["superficie"]}
 Continente: {pais["continente"]}            
