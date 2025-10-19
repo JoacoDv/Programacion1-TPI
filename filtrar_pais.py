@@ -1,3 +1,13 @@
+# Intrroducimos una funcion auxiliar para validar los numeros enteros: 
+def solicitar_entero(mensaje):
+    # Pide un número entero no negativo y lo valida.
+    while True:
+        valor = input(mensaje).strip()
+        if valor.isdigit():
+            return int(valor)
+        print("Error: Debe ingresar un número entero no negativo.")
+
+
 #Funcion para filtrar paises:  
  
 def filtrar_pais(paises):
@@ -8,7 +18,7 @@ def filtrar_pais(paises):
 3 para filtrar por rango de superficie""")
 
     #Almacenamos la respuesta del usuario para posteriormente usarla como condicional
-    respuesta = int(input("Eliga su opción: "))
+    respuesta = input("Eliga su opción: ")
 
     #Inicializamos un array vacio para guardar los paises filtrados
     paises_filtrados = []
@@ -16,7 +26,7 @@ def filtrar_pais(paises):
     #Evaluamos que opción eligio el usuario
 
 
-    if respuesta == 1:
+    if respuesta == "1":
 
         #En filtro por continente pedimos el continente
         continente = input("Escriba el continente deseado: ")
@@ -40,11 +50,11 @@ Continente: {pais["continente"]}
                 \n""")
 
 
-    elif respuesta == 2:
+    elif respuesta == "2":
 
         #En filtro por rango de población pedimos el minimo y maximo
-        rango1 = int(input("Eliga el numero menor del rango: "))
-        rango2 = int(input("Eliga el numero mayor del rango: "))
+        rango1 = solicitar_entero("Eliga el numero menor del rango: ")
+        rango2 = solicitar_entero("Eliga el numero meyor del rango: ")
 
         #Utilizamos el mismo procedimiento de iterar los paises
         for pais in paises:
@@ -63,13 +73,13 @@ Continente: {pais["continente"]}
 Habitantes: {pais["poblacion"]}
 Superficie: {pais["superficie"]}
 Continente: {pais["continente"]}            
-                \n""")
+                """)
 
-    elif respuesta == 3:
+    elif respuesta == "3":
 
         #En la opción de rango de superficie tambien pedimos rango minimo y maximo
-        rango1 = int(input("Eliga el numero menor del rango: "))
-        rango2 = int(input("Eliga el numero mayor del rango: "))
+        rango1 = solicitar_entero("Eliga el numero menor del rango: ")
+        rango2 = solicitar_entero("Eliga el numero mayor del rango: ")
 
         #Utilizamos misma iteración
         for pais in paises:

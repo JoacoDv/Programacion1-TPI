@@ -46,7 +46,7 @@ def modificar_pais(archivo, paises):
     while True:
         nueva_superficie = input("Ingrese la nueva superficie: ").strip()
         # Permite números con coma o punto decimal
-        if not nueva_superficie.replace(',', '').replace('.', '', 1).isdigit():
+        if not nueva_superficie.replace(',', '').replace('.', '').isdigit():
             print("La superficie debe ser un número válido.")
             continue
         break

@@ -27,15 +27,16 @@ def mostrar_estadisticas(paises):
 
     # Creamos estructura condicional con la respuesta del usuario
 
-    respuesta = int(input("Escriba su eleccion: "))
+    respuesta = input("Escriba su eleccion: ")
 
     #Sacamos y mostramos paises con minima y maxima poblacion
 
-    if respuesta == 1:
+    if respuesta == "1":
         minimo = min(paises, key = lambda pais: int(pais["poblacion"]))
         maximo = max(paises, key = lambda pais: int(pais["poblacion"]))
 
-        print(f"""Pais con pobalcion minima:
+        print(f"""
+Pais con pobalcion minima:
 Pais: {minimo["nombre"]}
 Poblacion: {minimo["poblacion"]}
 Superficie: {minimo["superficie"]}
@@ -46,25 +47,26 @@ Pais: {maximo["nombre"]}
 Poblacion: {maximo["poblacion"]}
 Superficie: {maximo["superficie"]}
 Continente: {maximo["continente"]}
+
 """)
 
     #Imprimimos el promdio de paises
 
-    if respuesta == 2:
-        print("El promedio de la poblacion de todos los paises ingresados es de ", promedio(paises, "poblacion"), "habitantes")
+    elif respuesta == "2":
+        print("\nEl promedio de la poblacion de todos los paises ingresados es de ", promedio(paises, "poblacion"), "habitantes\n")
 
     #Imprimimos el promedio de superficie
-    if respuesta == 3:
-        print("El promedio de la superficie de todos los paises ingresados es de ", promedio(paises, "superficie"), "km al cuadrado")
+    elif respuesta == "3":
+        print("\nEl promedio de la superficie de todos los paises ingresados es de ", promedio(paises, "superficie"), "km al cuadrado\n")
 
     #Imprimimos la cantidad de paises totales por continente
-    if respuesta == 4:
+    elif respuesta == "4":
         continentes = ["america", "europa", "africa", "asia", "oceania"]
 
         for continente in continentes:
-            print(f"El numero de paises en {continente} es de {paises_por_continente(paises, continente)}")
+            print(f"\nEl numero de paises en {continente} es de {paises_por_continente(paises, continente)}\n")
 
     #Manejamos la excepcion de que el usuario alla elegido otra opcion
     else:
-        print("La opcion elegida es incorrecta")
+        print("\nLa opcion elegida es incorrecta\n")
         mostrar_estadisticas(paises)

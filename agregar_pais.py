@@ -1,15 +1,28 @@
 import csv
 import os
 
+# Intrroducimos una funcion auxiliar para validar los numeros enteros: 
+def solicitar_entero(mensaje):
+    # Pide un número entero no negativo y lo valida.
+    while True:
+        valor = input(mensaje).strip()
+        if valor.isdigit():
+            return int(valor)
+        print("Error: Debe ingresar un número entero no negativo.")
+
 def agregar_pais(archivo, datos):
 
     # Pedir datos del país, controlando que no estén vacíos
     while True:
         nombre = input("Nombre del país: ").strip()
-        poblacion = input("Población: ").strip()
-        superficie = input("Superficie: ").strip()
+        poblacion = solicitar_entero("Población: ")
+        superficie = solicitar_entero("Superficie: ")
         continente = input("Continente: ").strip()
         
+        if nombre.isdigit() and continente.isdigit():
+            print("Los campos de país y Continente no pueden ser digitos.")
+            continue
+
         if not all([nombre, poblacion, superficie, continente]):
             print("Todos los campos son obligatorios. Intente nuevamente.")
         else:

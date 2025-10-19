@@ -16,6 +16,13 @@ archivo = input("Ingrese el archivo sobre paises del cual desea saber mas: ")
     
 datos = extraer_datos(archivo)
 
+# Validamos si el archivo y los datos no son correctos el programa vuelva a pedirlos
+while datos == "error":
+    print("Hubo un error, el archivo no existe o no tiene el formato correcto, ingrese nuevamente un archivo valido")
+    archivo = input("Ingrese el archivo sobre paises del cual desea saber mas: ")
+    datos = extraer_datos(archivo)
+
+
 # Iniciamos un bucle con nuestro porgrama
 
 while datos != "error":
